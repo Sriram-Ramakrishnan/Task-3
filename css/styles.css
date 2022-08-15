@@ -1,6 +1,9 @@
 .tile {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 90px;
+    border-radius: 3px;
+    margin:0px;
+    padding: 10px;
     border: 1px solid black;
     display: inline-block;
     cursor: pointer;
@@ -8,5 +11,9 @@
 
 .tile:hover {
     background-color: gray;
-    
+}
+
+#details{
+    padding: 10px;
+    margin:10px;
 }
