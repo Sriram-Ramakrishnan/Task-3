@@ -5,6 +5,13 @@
     border: 1px solid black;
     display: inline-block;
     cursor: pointer;
+    transition: 0.6s ease-in-out;
+    color: white;
+}
+
+.tile:hover{
+transition: 0.6s ease-in-out;
+    //add the rgb thing here
 }
 
 footer{
