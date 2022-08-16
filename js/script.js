@@ -24,6 +24,13 @@ function stopAudio(){
 audio.pause();
 }
 
+
+function refresh(){
+  for(var i =0; i<alltiles.length; i++){
+    tile.setAttribute('style', 'background-color:white;')
+  }
+}
+
 // Generate number of tiles from input
 var index = 0;
 var tiles = document.querySelector("#main-content");
@@ -60,7 +67,8 @@ button.addEventListener('click', ()=>{
             var color = "rgb("+randint(0,255)+","+randint(0,255)+","+randint(0,255)+")";
             tile.setAttribute('style', 'background-color:'+color+';')
             tile.addEventListener('mouseover', playAudio(index));
-            tile.addEventListener('mouseleave', stopAudio());
+            setTimeout(tile.addEventListener('mouseleave', stopAudio()), 1500);
+
             });
             
             });
