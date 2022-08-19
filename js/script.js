@@ -1,4 +1,4 @@
-// Function should return a number in the range i - j, both inclusive 
+// Function should return a number in the range i - j, both inclusive
 randint = function (i,j){
     var num = i+Math.floor(Math.random()*(j+1-i));
     return num;
@@ -47,12 +47,12 @@ button.addEventListener('click', ()=>{
         content+= "</div>";
     }
     tiles.innerHTML+=content;
-        
+
     // Listens if we hover over the the entire matrix mainframe
     const alltiles = document.querySelectorAll('.tile');
     alltiles.forEach(tile => {
         // Generates the random index and highlights the color required.
-        tile.addEventListener('mouseover', function indexhighlight(event) 
+        tile.addEventListener('mouseover', function indexhighlight(event)
         {
             var rn = randint(index,7);
             if (rn>=7){
@@ -67,16 +67,13 @@ button.addEventListener('click', ()=>{
         tile.setAttribute('style', 'background-color:'+color+';')
         tile.addEventListener('mouseover', playAudio(index));
         setTimeout(tile.addEventListener('mouseleave', stopAudio()), 5000);
-        
+
         }
-        );        
+        );
         });
     refresher.addEventListener('click',()=>{
         for(var i =0; i<alltiles.length; i++){
             alltiles[i].setAttribute('style', 'background-color:white;')
         }
     });
-})  
-
-
-
+})
