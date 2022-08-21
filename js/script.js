@@ -89,7 +89,7 @@ button.addEventListener('click', ()=>{
 
        
         var color = colorGen();
-        tile.setAttribute('style', setWidth(n)+'background-color:'+color+';opacity: 0.7;')
+        tile.setAttribute('style', setWidth(n)+'background-color:'+color+';')
         tile.addEventListener('mouseover', playAudio(index));
 
         }
