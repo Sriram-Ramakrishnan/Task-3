@@ -25,6 +25,29 @@ function stopAudio(audio){
     audio.pause();
 }
 
+function colorGen() {
+    /*Return a color from the given set of array*/
+    var a =['#A6D1E6','#A3A6A3',
+            '#89B5AF','#DED9C4',
+            '#F6D7A7','#99A799',
+            '#C37B89','#8CA1A5',
+            '#D7E9F7','#E2C2B9',
+            '#FF7878','#9AD0EC',
+            '#1572A1','#9D5353',
+            '#D3DEDC','#FFDCB8'];
+            
+    return a[randint(0,15)];     
+}
+
+function setWidth(n) {
+    var width = 100;
+    if (n>13){
+        width = (1000/n);
+    }
+    height = width*0.8;
+    return "width: "+width+"px; height:"+height+"px;"
+}
+
 var index = 0;
 var tiles = document.querySelector("#main-content");
 var button = document.querySelector("#tileinp");
@@ -42,7 +65,9 @@ button.addEventListener('click', ()=>{
         for (j=0;j<n;j++){
             row = document.querySelector(".row")
             var num = i*n + (j+1);
-            content+="<div class='tile' id='t"+num+"'> </div>";
+            content+="<div class='tile' id='t"+num+"'";
+            content+=" style='"+setWidth(n)+"'";
+            content+="> </div>";
         }
         content+= "</div>";
     }
@@ -62,18 +87,19 @@ button.addEventListener('click', ()=>{
                 index=rn+1;
             }
 
-        //Generate a Random hexadecimal number 3 times:
-        var color = "rgb("+randint(0,255)+","+randint(0,255)+","+randint(0,255)+")";
-        tile.setAttribute('style', 'background-color:'+color+';')
+       
+        var color = colorGen();
+        tile.setAttribute('style', setWidth(n)+'background-color:'+color+';opacity: 0.7;')
         tile.addEventListener('mouseover', playAudio(index));
-        setTimeout(tile.addEventListener('mouseleave', stopAudio()), 5000);
 
         }
         );
         });
     refresher.addEventListener('click',()=>{
         for(var i =0; i<alltiles.length; i++){
-            alltiles[i].setAttribute('style', 'background-color:white;')
+            alltiles[i].setAttribute('style', 'opacity: 0;');
+            alltiles[i].setAttribute('style', 'border: 2px solid white;');
+            alltiles[i].setAttribute('style',setWidth(n));
         }
     });
 })

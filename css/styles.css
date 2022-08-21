@@ -1,13 +1,15 @@
 body{
-  background: rgb(255,244,122);
-background: linear-gradient(128deg, rgba(255,244,122,1) 0%, rgba(255,201,201,1) 45%, rgba(255,193,168,1) 100%);
+  background-color: #7F5A83;
 }
+
 
 p{
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 2.5rem;
   font-weight: bolder;
+  color: white;
+  margin-top: 20px;
 }
 
 .tileinput{
@@ -15,13 +17,11 @@ p{
   border-radius: 5px;
   height: 40px;
   width: 250px;
-font-family: 'Alumni Sans Pinstripe', sans-serif;
-font-size: 2.5rem;
-font-weight: bolder;
-padding-left: 5px;
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding-left: 5px;
 }
-
-
 
 button{
   height: 41px;
@@ -39,29 +39,26 @@ button{
 button:hover{
   transition: 0.6s ease-in-out;
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(0,212,255,1) 100%);
-color: white;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(0,212,255,1) 100%);
+  color: white;
 }
 
-p{
-
-}
 
 .tile {
     width: 100px;
     height: 80px;
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid white;
     display: inline-block;
     cursor: pointer;
     transition: 0.6s ease-in-out;
+    margin-right: 5px;
 }
 
 .tile:hover{
-transition: 0.6s ease-in-out;
+    transition: 0.6s ease-in-out;
+    opacity: 0.4;
 }
-
-
 
 footer{
     height: 100px;
